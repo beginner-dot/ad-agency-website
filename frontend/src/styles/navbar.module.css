@@ -1,33 +1,69 @@
 
-/* Navbar Styling */
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #333;
   padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
 }
 
-.navbar ul {
+.navLinks {
   list-style: none;
   display: flex;
   gap: 15px;
+  padding: 0;
+  margin: 0;
 }
 
-.navbar a {
+.navLinks li a {
   text-decoration: none;
   color: white;
   font-weight: bold;
 }
 
-
-
-.navbar ul li {
-  margin: 0 15px;
+.hamburger {
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
-.navbar ul li a {
-  color: white;
-  text-decoration: none;
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navLinks.open {
+    display: flex;
+    animation: slideIn 0.3s ease-in-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 }
