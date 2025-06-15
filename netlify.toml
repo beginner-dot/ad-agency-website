@@ -1,0 +1,5 @@
+[build.environment]
+  PYTHON_VERSION = "3.11.9"
+  RUBY_VERSION = "3.2.4"
+  GO_VERSION = "1.22.3"
+  PHP_VERSION = "8.3"
